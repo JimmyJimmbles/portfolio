@@ -56,6 +56,156 @@ a:hover{
 .grid-12{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}
 
 /**
+ * * * HERO SECTION * * *
+**/
+.hero-header {
+  position: relative;
+  padding: 1.5em 1em;
+  border-bottom: 1px solid #ededed;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul.navbar-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar-nav {
+  flex: 0 0 39%;
+}
+
+a.navbar-link {
+  /* background: antiquewhite; */
+  /* padding: 1em; */
+  color: #2d2d2d;
+}
+
+li.navbar-list--item {
+  position: relative;
+  display: block;
+}
+
+a.navbar-link:hover {
+  color: var(--dark-blue);
+}
+.layer{
+  position: absolute;
+  display: block;
+  width: 100%;
+  height:100%;
+}
+.hero-container {
+  position: relative;
+  display: flex;
+  height: calc(75vh - 73px);
+  background: #f5f5f5;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  overflow: hidden;
+}
+
+.hero-blurb {
+  display: block;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.hero-shapes {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.circle, .sm-circle, .lg-circle {
+  position: absolute;
+  display: block;
+  border-radius: 100%;
+}
+
+.circle {
+  width: 3.60em;
+  height: 3.60em;
+  top: 19%;
+  right: 15%;
+}
+
+.sm-circle {
+  width: 2em;
+  height: 2em;
+  bottom: 82%;
+  left: 22%;
+}
+
+.circle, .sm-circle.blue, .lg-circle.blue {
+  background: #007bff;
+}
+
+.circle.red, .sm-circle.red, .lg-circle.red {
+  background: #dc3545;
+}
+
+.circle.green, .sm-circle.green, .lg-circle.green {
+  background: #00BF50;
+  bottom: 2%;
+  right: 33%;
+}
+
+.lg-circle {
+  width: 5em;
+  height: 5em;
+}
+
+.square, .sm-square, .lg-square {
+  position: absolute;
+  display: block;
+}
+
+.square {
+  width: 15em;
+  height: 15em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.square.purple, .sm-square.purple, .lg-square.purple {
+  background: #3a56d4;
+}
+
+.sm-square {
+  width: 3em;
+  height: 3em;
+  bottom: 47%;
+  left: 3%;
+  transform: rotate(123deg);
+}
+
+.sm-square.green-bl {
+  background: #00BFAF;
+}
+
+.lg-square {
+  bottom: -39%;
+  left: -15%;
+  width: 37em;
+  height: 32em;
+  background: #E01010;
+  transform: rotate(78deg);
+}
+
+/**
  * * * Media Queries * * *
 **/
 @media (min-width: 576px) {
