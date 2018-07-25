@@ -20,7 +20,8 @@
 *,
 ::after,
 ::before{
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -34,14 +35,28 @@ body{
 }
 a{
   text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   color: var(--dark-blue);
 }
 a:hover{
   color: #0062cc;
 }
+.img-responsive{
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
 
 /*Grid Classes*/
+.container{
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: auto
+}
 .grid-row{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
 .grid-2{-webkit-box-flex:0;-ms-flex:0 0 16.667%;flex:0 0 16.667%;max-width:16.667%}
 .grid-3{-webkit-box-flex:0;-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}
@@ -63,29 +78,57 @@ a:hover{
   padding: 1.5em 1em;
   border-bottom: 1px solid #ededed;
 }
-
+/*Navigation*/
 .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;c
+      -ms-flex-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 ul.navbar-list {
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .navbar-nav {
-  flex: 0 0 39%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 39%;
+          flex: 0 0 39%;
 }
 
 a.navbar-link {
-  /* background: antiquewhite; */
-  /* padding: 1em; */
+  position: relative;
   color: #2d2d2d;
+  display: block;
 }
-
+a.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 35%;
+  background: rgba(0, 123, 255, 0.47);
+  height: 42%;
+  display: block;
+  z-index: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+a.navbar-link:hover::after {
+  width: 100%;
+  opacity: 1;
+}
 li.navbar-list--item {
   position: relative;
   display: block;
@@ -102,12 +145,21 @@ a.navbar-link:hover {
 }
 .hero-container {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: calc(75vh - 73px);
   background: #f5f5f5;
-  justify-content: center;
-  align-items: center;
-  flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   overflow: hidden;
 }
 
@@ -132,13 +184,24 @@ a.navbar-link:hover {
   position: absolute;
   display: block;
   border-radius: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-
+.circle:hover,
+.sm-circle:hover,
+.lg-circle:hover{
+  border-radius: 8px;
+}
 .circle {
   width: 3.60em;
   height: 3.60em;
   top: 19%;
   right: 15%;
+  -webkit-transition: leff 0.2s ease, top 0.2s ease, border-radius 0.3s ease;
+  -o-transition: leff 0.2s ease, top 0.2s ease, border-radius 0.3s ease;
+  transition: leff 0.2s ease, top 0.2s ease, border-radius 0.3s ease;
 }
 
 .sm-circle {
@@ -146,6 +209,9 @@ a.navbar-link:hover {
   height: 2em;
   bottom: 82%;
   left: 22%;
+  -webkit-transition: left 0.24s ease, border-radius 0.3s ease;
+  -o-transition: left 0.24s ease, border-radius 0.3s ease;
+  transition: left 0.24s ease, border-radius 0.3s ease;
 }
 
 .circle, .sm-circle.blue, .lg-circle.blue {
@@ -165,6 +231,9 @@ a.navbar-link:hover {
 .lg-circle {
   width: 5em;
   height: 5em;
+  -webkit-transition: top 0.3s ease, border-radius 0.3s ease;
+  -o-transition: top 0.3s ease, border-radius 0.3s ease;
+  transition: top 0.3s ease, border-radius 0.3s ease;
 }
 
 .square, .sm-square, .lg-square {
@@ -177,9 +246,21 @@ a.navbar-link:hover {
   height: 15em;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.68, 0.41, 0.14, 1.24);
+  transition: -webkit-transform 0.6s cubic-bezier(0.68, 0.41, 0.14, 1.24);
+  -o-transition: transform 0.6s cubic-bezier(0.68, 0.41, 0.14, 1.24);
+  transition: transform 0.6s cubic-bezier(0.68, 0.41, 0.14, 1.24);
+  transition: transform 0.6s cubic-bezier(0.68, 0.41, 0.14, 1.24), -webkit-transform 0.6s cubic-bezier(0.68, 0.41, 0.14, 1.24);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+      -ms-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
 }
-
+.square:hover {
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+      -ms-transform: translate(-50%, -50%) rotate(0deg);
+          transform: translate(-50%, -50%) rotate(0deg);
+}
 .square.purple, .sm-square.purple, .lg-square.purple {
   background: #3a56d4;
 }
@@ -189,7 +270,9 @@ a.navbar-link:hover {
   height: 3em;
   bottom: 47%;
   left: 3%;
-  transform: rotate(123deg);
+  -webkit-transform: rotate(123deg);
+      -ms-transform: rotate(123deg);
+          transform: rotate(123deg);
 }
 
 .sm-square.green-bl {
@@ -202,7 +285,9 @@ a.navbar-link:hover {
   width: 37em;
   height: 32em;
   background: #E01010;
-  transform: rotate(78deg);
+  -webkit-transform: rotate(78deg);
+      -ms-transform: rotate(78deg);
+          transform: rotate(78deg);
 }
 
 /**
@@ -233,4 +318,22 @@ a.navbar-link:hover {
 .grid-md-10{-webkit-box-flex:0;-ms-flex:0 0 83.33%;flex:0 0 83.33%;max-width:83.33%}
 .grid-md-11{-webkit-box-flex:0;-ms-flex:0 0 91.667%;flex:0 0 91.667%;max-width:91.667%}
 .grid-md-12{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}
+}
+/*Small devices*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .container{
+    width: 750px;
+  }
+}
+/*Medium Devices*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container{
+    width: 970px;
+  }
+}
+/*Large Devices*/
+@media (min-width: 1200px) {
+  .container{
+    width: 1170px;
+  }
 }
