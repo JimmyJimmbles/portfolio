@@ -37,16 +37,16 @@ function mouseParallax(id, left, top, mouseX, mouseY, speed) {
   obj.style.top = top + (mouseY - (parseInt(obj.offsetHeight) / 2 + top)) / containerHeight * speed + "px";
 }
 /**
- * Mouse Follow Parallax
+ * Sticky Navigation
 **/
 function stickyNav() {
   let navOffset, windowY, fullNav = document.getElementById("fullNav");
   navOffset = fullNav.offsetTop;
   windowY = window.scrollY;
-  console.log(windowY + " " + navOffset);
+
   if (windowY >= navOffset) {
     fullNav.classList.add("sticky");
-  } else if (windowY <= 708){
+  } else if (windowY <= navOffset) {
     fullNav.classList.remove("sticky");
   }
 }
