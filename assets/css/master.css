@@ -451,11 +451,17 @@ a.navbar-link:hover {
   -o-transition: unset;
   transition: unset;
 }
+.sidebar-content .sidebar--link{
+  display: none;
+}
 .site-nav--wrapper.opened .sidebar-content{
   opacity: 1;
   -webkit-transition: opacity 0.3s ease 0.3s;
   -o-transition: opacity 0.3s ease 0.3s;
   transition: opacity 0.3s ease 0.3s;
+}
+.site-nav--wrapper.opened .sidebar-content .sidebar--link{
+  display: block;
 }
 .site-nav--wrapper.opened .sidebar-content .sidebar--link:nth-child(1){
   -webkit-animation: cd-slide-in 0.3s 0.3s;
