@@ -1,4 +1,8 @@
 window.addEventListener("scroll", stickyNav);
+window.onload = init;
+function init(){
+  barGraph();
+}
 /**
  * Mouse Follow Parallax
 **/
@@ -50,6 +54,7 @@ function stickyNav() {
     fullNav.classList.remove("sticky");
   }
 }
+
 var menuBtn = document.getElementById('toggleBtn');
 function toggleNav() {
   let fullNav = document.querySelector('.site-nav--wrapper')
@@ -62,3 +67,11 @@ function toggleNav() {
   }
 }
 menuBtn.addEventListener("click", toggleNav, false);
+
+function barGraph() {
+  let bar = document.querySelectorAll('.bar');
+  for (var i = 0; i < bar.length; i++) {
+    let percent = bar[i].dataset.percentage;
+    bar[i].style.height = percent + "%";
+  }
+}
