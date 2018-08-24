@@ -33,8 +33,8 @@ function mouseParallax(id, left, top, mouseX, mouseY, speed) {
     containerWidth = parseInt(parantObj.offsetWidth),
     containerHeight = parseInt(parantObj.offsetHeight);
 
-  obj.style.left = left + (mouseX - (parseInt(obj.offsetWidth) / 2 + left)) / containerWidth * speed + "px";
-  obj.style.top = top + (mouseY - (parseInt(obj.offsetHeight) / 2 + top)) / containerHeight * speed + "px";
+  obj.style.left = left - (mouseX - (parseInt(obj.offsetWidth) / 2 + left)) / containerWidth * speed + "px";
+  obj.style.top = top - (mouseY - (parseInt(obj.offsetHeight) / 2 + top)) / containerHeight * speed + "px";
 }
 /**
  * Sticky Navigation
@@ -50,3 +50,15 @@ function stickyNav() {
     fullNav.classList.remove("sticky");
   }
 }
+var menuBtn = document.getElementById('toggleBtn');
+function toggleNav() {
+  let fullNav = document.querySelector('.site-nav--wrapper')
+  if (fullNav.classList.contains('opened')) {
+    fullNav.classList.remove('opened');
+    menuBtn.classList.remove('close');
+  } else {
+    fullNav.classList.add('opened');
+    menuBtn.classList.add('close');
+  }
+}
+menuBtn.addEventListener("click", toggleNav, false);

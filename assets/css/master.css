@@ -504,6 +504,7 @@ a.navbar-link:hover {
 }
 .toggle-btn{
   cursor: pointer;
+  position: relative;
 }
 .menu-line{
   background: #2d2d2d;
@@ -513,6 +514,37 @@ a.navbar-link:hover {
   width: 25px;
   margin: 0.25em auto;
   height: 2px;
+  transition: all 0.3s cubic-bezier(1, 0.57, 0, 0.93), opacity 0.2s ease, transform 0.3s ease;
+}
+.toggle-btn:hover .menu-line:first-child{
+  transform: translate(6px, 0);
+}
+.toggle-btn:hover .menu-line:nth-child(2) {
+  transform: translate(12px, 0);
+  transition-delay: 0.04s;
+}
+.toggle-btn:hover .menu-line:nth-child(3) {
+  transform: translate(6px, 0);
+  transition-delay: 0.08s;
+}
+.close .menu-line.top{
+  top: 8px;
+  position: relative;
+  transform: rotate(135deg);
+}
+.close .menu-line.middle{
+  opacity: 0;
+}
+.close .menu-line.bottom{
+  position: relative;
+  transform: rotate(-135deg);
+  top: -3px;
+}
+.toggle-btn.close:hover .menu-line:first-child{
+  transform: rotate(135deg);
+}
+.toggle-btn.close:hover .menu-line:nth-child(3) {
+  transform: rotate(-135deg);
 }
 .social-list{
   list-style: none;
