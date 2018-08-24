@@ -791,6 +791,8 @@ a.navbar-link:hover {
   bottom: 0;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  -webkit-box-shadow: 1px 1px 4px rgba(148, 148, 148, 0.5);
+          box-shadow: 1px 1px 4px rgba(148, 148, 148, 0.5);
 }
 .bar--title {
   position: absolute;
