@@ -803,6 +803,21 @@ a.navbar-link:hover {
           transform: translate(-50%, 0);
 }
 /**
+ * * * P R O J E C T S   S E C T I O N   S T Y L E S * * *
+**/
+
+/**
+ * * * G O A L S   S E C T I O N   S T Y L E S * * *
+**/
+#goals{
+  background: #eff0f1;
+}
+
+/**
+ * * * F O O T E R   S E C T I O N   S T Y L E S * * *
+**/
+
+/**
  * * * Media Queries * * *
 **/
 @media (min-width: 576px) {
