@@ -322,10 +322,11 @@ a.navbar-link:hover {
 }
 
 .lg-square {
-  bottom: -39%;
-  left: -15%;
-  width: 37em;
-  height: 32em;
+  bottom: -28%;
+  right: 54%;
+  left: unset;
+  width: 29em;
+  height: 26em;
   background: #E01010;
   -webkit-transform: rotate(78deg);
       -ms-transform: rotate(78deg);
@@ -1060,6 +1061,12 @@ a.project-link {
   }
   .sidebar--in__right{
     width: 2vw;
+  }
+  .lg-square{
+    bottom: -39%;
+    left: -15%;
+    width: 37em;
+    height: 32em;
   }
 }
 @media (min-width: 768px) {
