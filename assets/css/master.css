@@ -99,6 +99,10 @@ a:hover{
 }
 /*Navigation*/
 .navbar {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,8 +127,10 @@ ul.navbar-list {
 
 .navbar-nav {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 39%;
-          flex: 0 0 39%;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  display: block;
+  width: 100%;
 }
 
 a.navbar-link {
@@ -141,6 +147,8 @@ li.navbar-list--item::after {
   position: absolute;
   bottom: 0;
   width: 35%;
+  background: -webkit-repeating-linear-gradient(135deg, rgba(163, 230, 249, 0.65), rgba(163, 230, 249, 0.65), 13px, rgba(188, 181, 249, 0.65) 13px, rgba(188, 181, 249, 0.65) 23px);
+  background: -o-repeating-linear-gradient(135deg, rgba(163, 230, 249, 0.65), rgba(163, 230, 249, 0.65), 13px, rgba(188, 181, 249, 0.65) 13px, rgba(188, 181, 249, 0.65) 23px);
   background: repeating-linear-gradient(-45deg, rgba(163, 230, 249, 0.65), rgba(163, 230, 249, 0.65), 13px, rgba(188, 181, 249, 0.65) 13px, rgba(188, 181, 249, 0.65) 23px);
   height: 42%;
   display: block;
@@ -750,7 +758,10 @@ a.navbar-link:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  flex-flow: column-reverse;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: column-reverse;
+          flex-flow: column-reverse;
 }
 .number-list{
   margin: 0 0.5em 0 0;
@@ -759,7 +770,10 @@ a.navbar-link:hover {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  flex-flow: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: row-reverse;
+          flex-flow: row-reverse;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -780,7 +794,10 @@ a.navbar-link:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  flex-flow: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
   -webkit-box-shadow: 1px 1px 2px #dcdfe0;
           box-shadow: 1px 1px 2px #dcdfe0;
   background: #fff;
@@ -799,6 +816,8 @@ a.navbar-link:hover {
   height: 100%;
   border-radius: 0px;
   margin: 0;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -820,14 +839,20 @@ a.navbar-link:hover {
  * * * P R O J E C T S   S E C T I O N   S T Y L E S * * *
 **/
 .project-container {
-  margin-bottom: 3em;
-  flex-flow: row wrap;
+  margin-bottom: 0em;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 .project-container:nth-child(odd) {
-  flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 .project {
-  margin: 0 0.5em 0 0;
+  margin: 0 0.5em 3em 0;
 }
 a.project-link {
   position: relative;
@@ -839,11 +864,16 @@ a.project-link {
   background-size: cover;
   background-position-x: center;
   border-radius: 6px;
-  box-shadow: 1px 2px 5px rgba(0,0,0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 2px 5px rgba(0,0,0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+  -webkit-transition: background-position-y 0.4s ease;
+  -o-transition: background-position-y 0.4s ease;
   transition: background-position-y 0.4s ease;
 }
 .propject-image--wrapper:hover {
   background-position-y: 100%;
+  -webkit-transition: background-position-y 7s ease;
+  -o-transition: background-position-y 7s ease;
   transition: background-position-y 7s ease;
 }
 /**
@@ -855,6 +885,8 @@ a.project-link {
 .goal {
   max-width: 50em;
   margin: 0 auto;
+  font-weight: 600;
+  letter-spacing: 0.1em;
 }
 /**
  * * * F O O T E R   S E C T I O N   S T Y L E S * * *
@@ -869,6 +901,8 @@ a.project-link {
   position: absolute;
   width: 100%;
   height: 0.5em;
+  background: -webkit-repeating-linear-gradient(135deg, rgba(163, 230, 249, 1), rgba(163, 230, 249, 1), 13px, rgba(188, 181, 249, 1) 13px, rgba(188, 181, 249, 1) 23px);
+  background: -o-repeating-linear-gradient(135deg, rgba(163, 230, 249, 1), rgba(163, 230, 249, 1), 13px, rgba(188, 181, 249, 1) 13px, rgba(188, 181, 249, 1) 23px);
   background: repeating-linear-gradient(-45deg, rgba(163, 230, 249, 1), rgba(163, 230, 249, 1), 13px, rgba(188, 181, 249, 1) 13px, rgba(188, 181, 249, 1) 23px);
   top: 0;
 }
@@ -877,6 +911,7 @@ a.project-link {
 }
 .footer-email .sidebar--link{
   color: #f1f1f1;
+  display: inline-block;
 }
 .footer-social {
   display: block;
@@ -888,6 +923,9 @@ a.project-link {
 }
 .footer-social .social-list--item .social-list--link{
   position: relative;
+  background: -webkit-gradient(linear, right top, left bottom, from(#9ea1f5), color-stop(#7d9be9), color-stop(#5d94da), color-stop(#3d8dc9), to(#1984b6));
+  background: -webkit-linear-gradient(right top, #9ea1f5, #7d9be9, #5d94da, #3d8dc9, #1984b6);
+  background: -o-linear-gradient(right top, #9ea1f5, #7d9be9, #5d94da, #3d8dc9, #1984b6);
   background: linear-gradient(to left bottom, #9ea1f5, #7d9be9, #5d94da, #3d8dc9, #1984b6);
   color: #fff;
   width: 2em;
@@ -899,7 +937,9 @@ a.project-link {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .footer-message {
   text-align: center;
@@ -922,8 +962,28 @@ a.project-link {
 .grid-sm-10{-webkit-box-flex:0;-ms-flex:0 0 83.33%;flex:0 0 83.33%;max-width:83.33%}
 .grid-sm-11{-webkit-box-flex:0;-ms-flex:0 0 91.667%;flex:0 0 91.667%;max-width:91.667%}
 .grid-sm-12{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}
+  .navbar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: unset;
+            flex-flow: unset;
+  }
+  .navbar-nav{
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 39%;
+            flex: 0 0 39%;
+  }
+  .project-container{
+    margin-bottom: 3em;
+  }
   .skill-chart{
-    flex-flow: unset;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: unset;
+            flex-flow: unset;
+  }
+  .project {
+    margin: 0 0.5em 0 0;
   }
   .diamond-img{
     margin: 0;
@@ -969,7 +1029,10 @@ a.project-link {
     padding-left: 0em;
   }
   .bar-list{
-    flex-flow: unset;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: unset;
+            flex-flow: unset;
   }
   .bar-item{
     display: inline-block;
