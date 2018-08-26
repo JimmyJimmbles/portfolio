@@ -829,6 +829,10 @@ a.navbar-link:hover {
 .project {
   margin: 0 0.5em 0 0;
 }
+a.project-link {
+  position: relative;
+  display: block;
+}
 .propject-image--wrapper {
   position: relative;
   height: 15em;

@@ -78,16 +78,16 @@ function barGraph() {
   let bar = document.querySelectorAll('.bar');
   for (let x = 0; x < bar.length; x++) {
     bar[x].style.height = bar[x].dataset.percentage + "%";
-    if (parseInt(window.screen.width) <= 576) {
+    if (parseInt(window.innerWidth) <= 576) {
       bar[x].style.width = bar[x].dataset.percentage + "%";
       bar[x].style.height = "100%";
-    } else if( parseInt(window.screen.width) >= 576 ) {
+    } else if( parseInt(window.innerWidth) >= 576 ) {
       bar[x].style.height = bar[x].dataset.percentage + "%";
       bar[x].style.width = "70px";
     }
   }
   window.addEventListener('resize', function() {
-    var width = this.screen.width;
+    var width = this.innerWidth;
     for (var i = 0; i < bar.length; i++) {
       let percent = bar[i].dataset.percentage;
       if (parseInt(width) <= 576) {
