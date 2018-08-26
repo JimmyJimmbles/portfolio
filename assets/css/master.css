@@ -671,6 +671,9 @@ a.navbar-link:hover {
   overflow: hidden;
   max-width: 285px;
   max-height: 285px;
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: -3em;
   margin-bottom: -4em;
   -webkit-transform: translate(0, 0) rotate(-45deg);
       -ms-transform: translate(0, 0) rotate(-45deg);
@@ -1067,6 +1070,10 @@ a.project-link {
     left: -15%;
     width: 37em;
     height: 32em;
+  }
+  .diamond-img{
+    width: 100%;
+    margin-bottom: -4em;
   }
 }
 @media (min-width: 768px) {
