@@ -1,8 +1,14 @@
+var resized = false;
 window.addEventListener("scroll", stickyNav);
 window.onload = init;
 function init(){
   barGraph();
 }
+// window.addEventListener('resize', currWidth);
+// function currWidth() {
+//   var width = this.screen.width;
+//   return width;
+// }
 /**
  * Mouse Follow Parallax
 **/
@@ -70,8 +76,27 @@ menuBtn.addEventListener("click", toggleNav, false);
 
 function barGraph() {
   let bar = document.querySelectorAll('.bar');
-  for (var i = 0; i < bar.length; i++) {
-    let percent = bar[i].dataset.percentage;
-    bar[i].style.height = percent + "%";
+  for (let x = 0; x < bar.length; x++) {
+    bar[x].style.height = bar[x].dataset.percentage + "%";
+    if (parseInt(window.screen.width) <= 576) {
+      bar[x].style.width = bar[x].dataset.percentage + "%";
+      bar[x].style.height = "100%";
+    } else if( parseInt(window.screen.width) >= 576 ) {
+      bar[x].style.height = bar[x].dataset.percentage + "%";
+      bar[x].style.width = "70px";
+    }
   }
+  window.addEventListener('resize', function() {
+    var width = this.screen.width;
+    for (var i = 0; i < bar.length; i++) {
+      let percent = bar[i].dataset.percentage;
+      if (parseInt(width) <= 576) {
+        bar[i].style.width = percent + "%";
+        bar[i].style.height = "100%";
+      } else if( parseInt(width) >= 576 ) {
+        bar[i].style.height = percent + "%";
+        bar[i].style.width = "70px";
+      }
+    }
+  });
 }
