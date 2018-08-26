@@ -466,7 +466,7 @@ a.navbar-link:hover {
 }
 .site-nav--wrapper.opened .sidebar--in__right {
   opacity: 1;
-  width: 8vw;
+  width: 15vw;
 }
 .sidebar--link{
   display: block;
@@ -1074,6 +1074,9 @@ a.project-link {
   .diamond-img{
     width: 100%;
     margin-bottom: -4em;
+  }
+  .site-nav--wrapper.opened .sidebar--in__right{
+    width: 8vw;
   }
 }
 @media (min-width: 768px) {
